@@ -1,0 +1,13 @@
+{
+  "dataset": {"source": "wikimedia/wikipedia 20231101.hi", "chars": 1500000, "level": "character", "vocab": 369},
+  "common": {"dim": 96, "layers": 3, "heads": 4, "seq_len": 128, "batch": 8, "steps": 120, "lr": 0.0003},
+  "memory": {"conscious_slots": 8, "subconscious_slots": 128, "unconscious_slots": 512,
+             "decay": 0.9, "promote_threshold": 0.55, "retrieve_k": 4},
+  "nodes": {"count": 8, "layout": "2x2x2", "active_per_token": 2},
+  "measured": {
+    "baseline": {"parameters": 418848, "valid_loss": 3.3629, "perplexity": 28.87, "seconds": 25.3},
+    "triune": {"parameters": 1110172, "valid_loss": 3.3564, "perplexity": 28.69, "seconds": 42.0},
+    "memory_stats": {"promotions": 412, "demotions": 284, "evictions": 21000,
+                     "subconscious_occupancy": 1.0, "unconscious_occupancy": 0.5547}
+  }
+}
